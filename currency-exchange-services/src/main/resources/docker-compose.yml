@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  currency-exchange-service:
+    image: marcoscorona/mmv2-currency-exange-services:0.0.1-SNAPSHOT
+    ports:
+      - "8000:8000"
+    networks:
+      -  currency-network
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka/
+
+  naming-server:
+    image: marcoscorona/mmv2-netflix-eureka-naming-server:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    networks:
+      - currency-network
+
+  currency-conversion:
+    image: marcoscorona/mmv2-cuerrency-conversion-service:0.0.1-SNAPSHOT
+    ports:
+      - "8100:8100"
+    networks:
+      - currency-network
+    depends_on:
+      - naming-server
+      - api-gateway-server
+      - currency-exchange-service
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka/
+
+  api-gateway-server:
+    image: marcoscorona/mmv2-api-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "8765:8765"
+    networks:
+      - currency-network
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka/
+
+networks:
+  currency-network:

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cuerrency-conversion-service/cuerrency-conversion-service.iml" filepath="$PROJECT_DIR$/cuerrency-conversion-service/cuerrency-conversion-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/currency-exchange-services/currency-exange-services.iml" filepath="$PROJECT_DIR$/currency-exchange-services/currency-exange-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-limitservice/limit-service.iml" filepath="$PROJECT_DIR$/microservices-limitservice/limit-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/microservices-springcloud.iml" filepath="$PROJECT_DIR$/.idea/microservices-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" filepath="$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" />
+    </modules>
+  </component>
+</project>
